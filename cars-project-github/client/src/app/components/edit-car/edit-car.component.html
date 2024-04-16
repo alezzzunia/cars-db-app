@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-6">
+            <form [formGroup]="editCarForm" novalidate (ngSubmit)="submit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input [ngClass]="{'is-valid':editCarForm.controls['name'].valid, 
+              'is-invalid': editCarForm.controls['name'].invalid &&
+                (editCarForm.controls['name'].touched || 
+                editCarForm.controls['name'].dirty)
+              }" formControlName="name" type="text" class="form-control" id="name" name="name">
+
+                    <div class="invalid-feedback">
+                        Назва авто є обов'язковим полем
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <textarea formControlName="model" class="form-control" name="model" id="model"></textarea>
+                    <div *ngIf="
+            editCarForm.controls['model'].invalid &&
+             (editCarForm.controls['model'].touched || 
+             editCarForm.controls['model'].dirty)
+             " class="alert alert-danger" role="alert">
+                        Модель авто є обов'язковим полем
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input formControlName="price" type="number" class="form-control" id="price" name="price">
+                    <div *ngIf="
+            editCarForm.controls['price'].invalid &&
+             (editCarForm.controls['price'].touched || 
+             editCarForm.controls['price'].dirty)
+             " class="alert alert-danger" role="alert">
+                        Ціна авто є обов'язковим полем
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input [ngClass]="{'is-valid':editCarForm.controls['image'].valid, 
+              'is-invalid': editCarForm.controls['image'].invalid &&
+                (editCarForm.controls['image'].touched || 
+                editCarForm.controls['image'].dirty)
+              }" formControlName="image" type="text" class="form-control" id="image" name="image">
+
+                    <div class="invalid-feedback">
+                        Назва авто є обов'язковим полем
+                    </div>
+                </div>
+
+
+                <button [disabled]="editCarForm.invalid" type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col col-6">
+            <form [formGroup]="editCarForm" novalidate (ngSubmit)="submit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input formControlName="name" type="text" class="form-control" id="name">
+                    <div *ngIf="editCarForm.get('name').invalid && (editCarForm.get('name').touched || editCarForm.get('name').dirty)"
+                        class="alert alert-danger" role="alert">
+                        Name is required
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <textarea formControlName="model" class="form-control" id="model"></textarea>
+                    <div *ngIf="editCarForm.get('model').invalid && (editCarForm.get('model').touched || editCarForm.get('model').dirty)"
+                        class="alert alert-danger" role="alert">
+                        Model is required
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input formControlName="price" type="number" class="form-control" id="price">
+                    <div *ngIf="editCarForm.get('price').invalid && (editCarForm.get('price').touched || editCarForm.get('price').dirty)"
+                        class="alert alert-danger" role="alert">
+                        Price is required
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input formControlName="image" type="text" class="form-control" id="image">
+                    <div *ngIf="editCarForm.get('image').invalid && (editCarForm.get('image').touched || editCarForm.get('image').dirty)"
+                        class="alert alert-danger" role="alert">
+                        Image URL is required
+                    </div>
+                </div>
+
+                <button [disabled]="editCarForm.invalid" type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+</div> -->

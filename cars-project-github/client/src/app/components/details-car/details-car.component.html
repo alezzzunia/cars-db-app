@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-5" @visibility>
+            <div class="card">
+                <img src="{{car.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{car.name}}</h5>
+                    <p class="card-text">{{car.price}}</p>
+                    <a (click)="goBack()" class="btn btn-primary">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

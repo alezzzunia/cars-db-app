@@ -1,0 +1,32 @@
+<!-- login-page.component.html -->
+<div class="container text-center">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-3 mt-5">
+            <form (ngSubmit)="login()">
+                <div class="ring">
+                    <i style="--clr:#00ff0a;"></i>
+                    <i style="--clr:#ff0057;"></i>
+                    <i style="--clr:#fffd44;"></i>
+                    <div class="login">
+                        <h2>Login</h2>
+                        <div class="inputBx">
+                            <input type="text" placeholder="Username" [(ngModel)]="username"
+                                style="background-color: rgba(128, 128, 128, 0.6); color: black;">
+                        </div>
+                        <div class="inputBx">
+                            <input type="password" placeholder="Password" [(ngModel)]="password"
+                                style="background-color: rgba(128, 128, 128, 0.6); color: black;">
+                        </div>
+                        <div class="inputBx">
+                            <button type="submit">Sign in</button>
+                        </div>
+                        <!-- <div class="links">
+                            <a href="#">Forget Password</a>
+                            <a href="#">Sign Up</a>
+                        </div> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

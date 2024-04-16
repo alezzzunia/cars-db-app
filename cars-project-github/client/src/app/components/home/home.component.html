@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col mt-5" *ngFor='let car of cars'>
+            <div class="card" style="width: 18rem;">
+                <img [src]="car.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.name }}</h5>
+                    <p class="card-text">{{ car.model }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ car.price }}</li>
+                </ul>
+                <div class="card-body">
+                    <a class="card-link" (click)="showDetailsCar(car._id)">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

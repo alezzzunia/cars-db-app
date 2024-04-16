@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-6">
+            <form [formGroup]="addCarForm" novalidate (ngSubmit)="submit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input [ngClass]="{'is-valid':addCarForm.controls['name'].valid, 
+              'is-invalid': addCarForm.controls['name'].invalid &&
+                (addCarForm.controls['name'].touched || 
+                addCarForm.controls['name'].dirty)
+              }" formControlName="name" type="text" class="form-control" id="name" name="name">
+
+                    <div class="invalid-feedback">
+                        Назва авто є обов'язковим полем
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <textarea formControlName="model" class="form-control" name="model" id="model"></textarea>
+                    <div *ngIf="
+            addCarForm.controls['model'].invalid &&
+             (addCarForm.controls['model'].touched || 
+             addCarForm.controls['model'].dirty)
+             " class="alert alert-danger" role="alert">
+                        Модель авто є обов'язковим полем
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input formControlName="price" type="number" class="form-control" id="price" name="price">
+                    <div *ngIf="
+            addCarForm.controls['price'].invalid &&
+             (addCarForm.controls['price'].touched || 
+             addCarForm.controls['price'].dirty)
+             " class="alert alert-danger" role="alert">
+                        Ціна авто є обов'язковим полем
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input [ngClass]="{'is-valid':addCarForm.controls['image'].valid, 
+              'is-invalid': addCarForm.controls['image'].invalid &&
+                (addCarForm.controls['image'].touched || 
+                addCarForm.controls['image'].dirty)
+              }" formControlName="image" type="text" class="form-control" id="image" name="image">
+
+                    <div class="invalid-feedback">
+                        Назва авто є обов'язковим полем
+                    </div>
+                </div>
+
+
+                <button [disabled]="addCarForm.invalid" type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
